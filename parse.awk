@@ -20,9 +20,9 @@ function field(f)
     f = strip(f)
     sub(/^([^\|]*\|)*/, "", f)
     sub(/^[[:space:]]*(\[\[)?/, "", f)
-    gsub(/\[\[|\]\]|<br>|'''?|[*†‡]/, "", f)
+    gsub(/\[\[|\]\]|<br>|<\/?sup>|'''?|[*†‡]/, "", f)
     gsub(/[[:space:]]+/, " ", f)
-    return f
+    return strip(f)
 }
 
 function year(f)
